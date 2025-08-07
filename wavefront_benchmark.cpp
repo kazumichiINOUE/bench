@@ -296,7 +296,11 @@ int main() {
     // Get system info
     std::string system_info = get_system_info();
     std::cout << system_info;
-    std::cout << "Compiler: g++ -std=c++17 -Wall" << std::endl;
+    
+    #ifndef CXXFLAGS
+    #define CXXFLAGS "Unknown"
+    #endif
+    std::cout << "Compiler: g++ " << CXXFLAGS << std::endl;
     std::cout << "Date: " << __DATE__ << std::endl;
     
     std::cout << "\nWaveFront Planner Benchmark Results:" << std::endl;
